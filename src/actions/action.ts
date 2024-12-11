@@ -19,8 +19,3 @@ export const crearReceta = async (formData: FormData) => {
   revalidatePath("/");
 };
 
-export const eliminarReceta = async (id: string) => {
-  await connectToDatabase();
-  await Receta.findByIdAndDelete(id);
-  revalidatePath("/");
-};

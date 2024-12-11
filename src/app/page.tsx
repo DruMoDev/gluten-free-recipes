@@ -3,10 +3,13 @@ import Container from "@/components/ui/Container";
 import { CATEGORIAS } from "@/data/categorias";
 import { connectToDatabase } from "@/lib/db";
 import Receta from "@/models/Recetas";
+import { RecetaType } from "@/types/receta";
 
 export default async function HomePage() {
   await connectToDatabase();
-  const recetas = await Receta.find();
+  const recetas: RecetaType[] = await Receta.find();
+
+ 
 
   return (
     <Container>

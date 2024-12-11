@@ -6,6 +6,8 @@ if (!MONGODB_URI) {
   throw new Error("Please define the MONGODB_URI environment variable");
 }
 
+
+// TODO: Add a cache to avoid connecting multiple times
 export const connectToDatabase = async () => {
   mongoose.connect(MONGODB_URI);
 };
