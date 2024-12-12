@@ -6,16 +6,22 @@ import { revalidatePath } from "next/cache";
 
 export const crearReceta = async (formData: FormData) => {
   await connectToDatabase();
+  const nombre = formData.get("nombre")?.toString();
+  const ingredientes = formData.get("ingredientes")?.toString().split(",");
+  const instrucciones = formData.get("instrucciones")?.toString();
+  const tiempoPreparacion = formData.get("tiempoPreparacion");
+  const dificultad = formData.get("dificultad");
+  const porciones = formData.get("porciones");
+
   const receta = new Receta({
-    nombre: formData.get("nombre"),
-    ingredientes: ["ingrediente1", "ingrediente2", "ingrediente3"],
-    instrucciones: "Instrucciones aleatorias",
-    tiempoPreparacion: Math.floor(Math.random() * 120), // Random time between 0 and 120 minutes
-    dificultad: ["Fácil", "Media", "Difícil"][Math.floor(Math.random() * 3)], // Random difficulty
-    porciones: Math.floor(Math.random() * 10) + 1, // Random portions between 1 and 10
+    nombre,
+    ingredientes,
+    instrucciones,
+    tiempoPreparacion,
+    dificultad,
+    porciones,
     imagenUrl: "https://example.com/imagen-aleatoria.jpg",
   });
-    await receta.save();
+  await receta.save();
   revalidatePath("/");
 };
-
