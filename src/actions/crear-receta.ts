@@ -12,6 +12,7 @@ export const crearReceta = async (formData: FormData) => {
   const tiempoPreparacion = formData.get("tiempoPreparacion");
   const dificultad = formData.get("dificultad");
   const porciones = formData.get("porciones");
+  const bgColor = Math.floor(Math.random() * 14);
 
   const receta = new Receta({
     nombre,
@@ -20,7 +21,8 @@ export const crearReceta = async (formData: FormData) => {
     tiempoPreparacion,
     dificultad,
     porciones,
-    imagenUrl: "https://example.com/imagen-aleatoria.jpg",
+    imagenUrl: "https://random.imagecdn.app/500/150",
+    bgColor,
   });
   await receta.save();
   revalidatePath("/");

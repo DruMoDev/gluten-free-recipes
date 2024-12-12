@@ -1,5 +1,5 @@
 "use client";
-import { crearReceta } from "@/actions/action";
+import { crearReceta } from "@/actions/crear-receta";
 import { FormEvent, useRef } from "react";
 import { useState } from "react";
 
@@ -26,7 +26,7 @@ export default function AñadirNuevaRecetaFormulario() {
     await crearReceta(formData);
   };
   return (
-    <section>
+    <section id="nueva-receta">
       <form onSubmit={handleFormSubmit} ref={formRef}>
         {error && <p className="text-red-500">{error}</p>}
         <h3 className="mb-3">Añade una nueva receta</h3>

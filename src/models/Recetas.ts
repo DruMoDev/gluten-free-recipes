@@ -8,6 +8,7 @@ interface IReceta extends Document {
   dificultad: "Fácil" | "Media" | "Difícil";
   porciones: number;
   imagenUrl?: string;
+  bgColor: number;
 }
 
 const RecetaSchema = new Schema<IReceta>({
@@ -22,6 +23,7 @@ const RecetaSchema = new Schema<IReceta>({
   },
   porciones: { type: Number, required: true },
   imagenUrl: { type: String },
+  bgColor: { type: Number, required: true },
 });
 
 const Receta = models.Receta || model<IReceta>("Receta", RecetaSchema);

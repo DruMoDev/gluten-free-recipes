@@ -6,5 +6,6 @@ export type RecetaType = {
   tiempoPreparacion: number;
   dificultad: "Fácil" | "Media" | "Difícil";
   porciones: number;
-  imagenUrl: string;
+  imagenUrl?: string;
+  bgColor: number;
 };
