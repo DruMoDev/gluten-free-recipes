@@ -15,12 +15,12 @@ const fireOptions: SweetAlertOptions = {
   timerProgressBar: true,
 };
 
-export default function BotonVerMasReceta() {
+export default function BotonEditarReceta() {
   return (
     <button
-      className="bg-accent text-white rounded-lg px-3 py-1"
+      className="bg-primary text-white rounded-lg px-3 py-1"
       onClick={() => MySwal.fire(fireOptions)}>
-      Ver
+      Editar
     </button>
   );
 }

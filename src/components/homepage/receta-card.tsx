@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import BotonEditarReceta from "../ui/boton-editar-receta";
 import BotonEliminarRecetaId from "../ui/boton-eliminar-receta-id";
 import BotonVerMasReceta from "../ui/boton-ver-mas-receta";
 
@@ -66,9 +67,7 @@ export default function RecetaCard({
       </div>
       <div className="mt-4 flex justify-between">
         <BotonVerMasReceta />
-        <button className="bg-primary text-white rounded-lg px-3 py-1">
-          Editar
-        </button>
+        <BotonEditarReceta />
         <BotonEliminarRecetaId id={_id.toString()} />
       </div>
     </li>
