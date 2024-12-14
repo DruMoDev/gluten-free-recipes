@@ -11,10 +11,10 @@ export default async function NuevasRecetas() {
       <div className="flex items-center jsutice gap-2">
         <h2 className="font-bold text-slate-800">Últimas recetas</h2>
         <Link href={"#nueva-receta"}>
-        <BadgePlus className="text-defaultColor size-7" />
+          <BadgePlus className="text-defaultColor size-7" />
         </Link>
       </div>
-      <ul className="grid grid-cols-1 gap-7 mt-8 md:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid grid-cols-1 gap-7 mt-8 lg:grid-cols-2 2xl:grid-cols-3">
         {recetas.map(
           ({
             _id,
