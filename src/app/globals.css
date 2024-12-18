@@ -28,7 +28,7 @@ span {
 }
 
 button {
-  @apply bg-primary min-w-32 rounded-lg hover:opacity-80 transition-all font-bold tracking-wider;
+  @apply min-w-32 rounded-lg hover:opacity-80 transition-all font-bold tracking-wider;
 }
 section {
   @apply py-8 w-full;

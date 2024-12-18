@@ -1,23 +1,10 @@
 import { useState } from "react";
-
-interface Ingredientes {
-  nombre: string;
-  cantidad: string;
-  medida: string;
-}
-
-type FormData = {
-  nombre: string;
-  ingredientes: Ingredientes[];
-  instrucciones: string;
-  tiempoPreparacion: string;
-  dificultad: string;
-  porciones: number;
-};
+import ListaIngredientesAñadidos from "./lista-ingredientes-añadidos";
+import { FormNuevaReceta } from "@/types/receta";
 
 type Props = {
-  formData: FormData;
-  setFormData: (data: FormData) => void;
+  formData: FormNuevaReceta;
+  setFormData: (data: FormNuevaReceta) => void;
   setError: (error: string | null) => void;
 };
 
@@ -51,14 +38,10 @@ export default function IngredientesInput({
   return (
     <>
       <h4 className="mt-4">Ingredientes</h4>
-      <ul className="mt-3 flex gap-3">
-        {formData.ingredientes.map((ingrediente, index) => (
-          <li key={index} className="border p-2 rounded-lg mb-2 bg-gray-100">
-            {ingrediente.nombre} - {ingrediente.cantidad} {ingrediente.medida}
-          </li>
-        ))}
-      </ul>
-
+      <ListaIngredientesAñadidos
+        formData={formData}
+        setFormData={setFormData}
+      />
       <div className="grid grid-cols-3 gap-2">
         <input
           type="text"

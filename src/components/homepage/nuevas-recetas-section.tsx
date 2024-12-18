@@ -9,7 +9,7 @@ export default async function NuevasRecetas() {
   return (
     <section>
       <div className="flex items-center jsutice gap-2">
-        <h2 className="font-bold text-slate-800">Últimas recetas</h2>
+        <h2 className="font-bold text-slate-800">Nuevas recetas</h2>
         <Link href={"#nueva-receta"}>
           <BadgePlus className="text-defaultColor size-7" />
         </Link>
